@@ -1,0 +1,132 @@
+{
+ "n": 150,
+ "closeMax": 0.7854093168299701,
+ "offVoiceMin": 1.2723510703123002,
+ "rule": "Same-author and cross-author distances overlap, so the percentile gap is not available. Close means at or under the median same-author distance. Off-voice means at or over the median cross-author distance. Drifting is the open interval between the medians.",
+ "method": "median-overlap",
+ "sameAuthor": {
+  "count": 99,
+  "min": 0.46792119669313603,
+  "p10": 0.6368230553417169,
+  "p25": 0.7012599640898395,
+  "p50": 0.7854093168299701,
+  "p75": 0.8842037814859095,
+  "p90": 0.971758228108809,
+  "max": 1.2420775581254364,
+  "mean": 0.8035779704289752
+ },
+ "crossAuthor": {
+  "count": 99,
+  "min": 0.6183375179177596,
+  "p10": 0.7495167552852582,
+  "p25": 0.8111645228726788,
+  "p50": 1.2723510703123002,
+  "p75": 1.4131961959885508,
+  "p90": 1.528130885317481,
+  "max": 2.052917887962858,
+  "mean": 1.1748132441468822
+ },
+ "perVoiceAttribution": {
+  "correct": 76,
+  "total": 99,
+  "byAuthor": {
+   "austen": {
+    "correct": 61,
+    "total": 61
+   },
+   "bronte": {
+    "correct": 15,
+    "total": 38
+   }
+  }
+ },
+ "sharedAttribution": {
+  "correct": 97,
+  "total": 99,
+  "byAuthor": {
+   "austen": {
+    "correct": 59,
+    "total": 61
+   },
+   "bronte": {
+    "correct": 38,
+    "total": 38
+   }
+  }
+ },
+ "sharedSameAuthor": {
+  "count": 99,
+  "min": 0.37689709056580323,
+  "p10": 0.5048140463654258,
+  "p25": 0.5717114267712105,
+  "p50": 0.7033599269844176,
+  "p75": 0.8532538311285089,
+  "p90": 0.9437629004346965,
+  "max": 1.332982453579382,
+  "mean": 0.7258379485664876
+ },
+ "sharedCrossAuthor": {
+  "count": 99,
+  "min": 0.619100122987328,
+  "p10": 0.7688507963265503,
+  "p25": 0.831114224970523,
+  "p50": 0.9333140787525205,
+  "p75": 1.0251865392882018,
+  "p90": 1.1029946328658378,
+  "max": 1.4513585702290612,
+  "mean": 0.9372939545383977
+ },
+ "heldOutId": "austen-10",
+ "heldOut": {
+  "id": "austen-10",
+  "author": "austen",
+  "title": "Chapter X",
+  "words": 2219,
+  "deltaSame": 0.6563250730471554,
+  "deltaCross": 0.847914294643262
+ },
+ "sharedMisses": [
+  {
+   "id": "austen-28",
+   "author": "austen",
+   "title": "Chapter XXVIII",
+   "words": 1451,
+   "deltaSame": 1.078468736495178,
+   "deltaCross": 1.0521316301405965
+  },
+  {
+   "id": "austen-39",
+   "author": "austen",
+   "title": "Chapter XXXIX",
+   "words": 1640,
+   "deltaSame": 0.9635186327401106,
+   "deltaCross": 0.9546753562126453
+  }
+ ],
+ "lengthCheck": [
+  {
+   "words": 400,
+   "correct": 88,
+   "total": 99,
+   "skipped": false
+  },
+  {
+   "words": 800,
+   "correct": 92,
+   "total": 97,
+   "skipped": false
+  },
+  {
+   "words": 1200,
+   "correct": 91,
+   "total": 92,
+   "skipped": false
+  },
+  {
+   "words": 2000,
+   "correct": 60,
+   "total": 61,
+   "skipped": false
+  }
+ ]
+}

@@ -1,0 +1,1025 @@
+{
+ "n": 150,
+ "closeMax": 0.7854093168299701,
+ "offVoiceMin": 1.2723510703123002,
+ "rule": "Same-author and cross-author distances overlap, so the percentile gap is not available. Close means at or under the median same-author distance. Off-voice means at or over the median cross-author distance. Drifting is the open interval between the medians.",
+ "method": "median-overlap",
+ "sameAuthor": {
+  "count": 99,
+  "min": 0.46792119669313603,
+  "p10": 0.6368230553417169,
+  "p25": 0.7012599640898395,
+  "p50": 0.7854093168299701,
+  "p75": 0.8842037814859095,
+  "p90": 0.971758228108809,
+  "max": 1.2420775581254364,
+  "mean": 0.8035779704289752
+ },
+ "crossAuthor": {
+  "count": 99,
+  "min": 0.6183375179177596,
+  "p10": 0.7495167552852582,
+  "p25": 0.8111645228726788,
+  "p50": 1.2723510703123002,
+  "p75": 1.4131961959885508,
+  "p90": 1.528130885317481,
+  "max": 2.052917887962858,
+  "mean": 1.1748132441468822
+ },
+ "perVoiceAttribution": {
+  "correct": 76,
+  "total": 99,
+  "byAuthor": {
+   "austen": {
+    "correct": 61,
+    "total": 61
+   },
+   "bronte": {
+    "correct": 15,
+    "total": 38
+   }
+  }
+ },
+ "sharedAttribution": {
+  "correct": 97,
+  "total": 99,
+  "byAuthor": {
+   "austen": {
+    "correct": 59,
+    "total": 61
+   },
+   "bronte": {
+    "correct": 38,
+    "total": 38
+   }
+  }
+ },
+ "sharedSameAuthor": {
+  "count": 99,
+  "min": 0.37689709056580323,
+  "p10": 0.5048140463654258,
+  "p25": 0.5717114267712105,
+  "p50": 0.7033599269844176,
+  "p75": 0.8532538311285089,
+  "p90": 0.9437629004346965,
+  "max": 1.332982453579382,
+  "mean": 0.7258379485664876
+ },
+ "sharedCrossAuthor": {
+  "count": 99,
+  "min": 0.619100122987328,
+  "p10": 0.7688507963265503,
+  "p25": 0.831114224970523,
+  "p50": 0.9333140787525205,
+  "p75": 1.0251865392882018,
+  "p90": 1.1029946328658378,
+  "max": 1.4513585702290612,
+  "mean": 0.9372939545383977
+ },
+ "heldOutId": "austen-10",
+ "heldOut": {
+  "id": "austen-10",
+  "author": "austen",
+  "title": "Chapter X",
+  "words": 2219,
+  "deltaSame": 0.6563250730471554,
+  "deltaCross": 0.847914294643262
+ },
+ "sharedMisses": [
+  {
+   "id": "austen-28",
+   "author": "austen",
+   "title": "Chapter XXVIII",
+   "words": 1451,
+   "deltaSame": 1.078468736495178,
+   "deltaCross": 1.0521316301405965
+  },
+  {
+   "id": "austen-39",
+   "author": "austen",
+   "title": "Chapter XXXIX",
+   "words": 1640,
+   "deltaSame": 0.9635186327401106,
+   "deltaCross": 0.9546753562126453
+  }
+ ],
+ "lengthCheck": [
+  {
+   "words": 400,
+   "correct": 88,
+   "total": 99,
+   "skipped": false
+  },
+  {
+   "words": 800,
+   "correct": 92,
+   "total": 97,
+   "skipped": false
+  },
+  {
+   "words": 1200,
+   "correct": 91,
+   "total": 92,
+   "skipped": false
+  },
+  {
+   "words": 2000,
+   "correct": 60,
+   "total": 61,
+   "skipped": false
+  }
+ ],
+ "rows": [
+  {
+   "id": "austen-1",
+   "author": "austen",
+   "title": "Chapter I",
+   "words": 853,
+   "deltaSame": 1.332982453579382,
+   "deltaCross": 1.3399617820726855,
+   "correct": true
+  },
+  {
+   "id": "austen-2",
+   "author": "austen",
+   "title": "Chapter II",
+   "words": 799,
+   "deltaSame": 1.271421593185438,
+   "deltaCross": 1.3809776343322113,
+   "correct": true
+  },
+  {
+   "id": "austen-3",
+   "author": "austen",
+   "title": "Chapter III",
+   "words": 1704,
+   "deltaSame": 0.908399536483394,
+   "deltaCross": 1.0368957347464858,
+   "correct": true
+  },
+  {
+   "id": "austen-4",
+   "author": "austen",
+   "title": "Chapter IV",
+   "words": 1064,
+   "deltaSame": 1.1108748930567238,
+   "deltaCross": 1.2486337311475006,
+   "correct": true
+  },
+  {
+   "id": "austen-5",
+   "author": "austen",
+   "title": "Chapter V",
+   "words": 962,
+   "deltaSame": 1.1158304449936802,
+   "deltaCross": 1.2098767977331533,
+   "correct": true
+  },
+  {
+   "id": "austen-6",
+   "author": "austen",
+   "title": "Chapter VI",
+   "words": 2353,
+   "deltaSame": 0.6781482781972754,
+   "deltaCross": 0.9300544058508469,
+   "correct": true
+  },
+  {
+   "id": "austen-7",
+   "author": "austen",
+   "title": "Chapter VII",
+   "words": 1999,
+   "deltaSame": 0.742271305910267,
+   "deltaCross": 0.9171825315606305,
+   "correct": true
+  },
+  {
+   "id": "austen-8",
+   "author": "austen",
+   "title": "Chapter VIII",
+   "words": 1936,
+   "deltaSame": 0.8198129503471883,
+   "deltaCross": 1.007304775383563,
+   "correct": true
+  },
+  {
+   "id": "austen-9",
+   "author": "austen",
+   "title": "Chapter IX",
+   "words": 1739,
+   "deltaSame": 0.7669324220349316,
+   "deltaCross": 0.9634246630362701,
+   "correct": true
+  },
+  {
+   "id": "austen-10",
+   "author": "austen",
+   "title": "Chapter X",
+   "words": 2219,
+   "deltaSame": 0.6563250730471554,
+   "deltaCross": 0.847914294643262,
+   "correct": true
+  },
+  {
+   "id": "austen-11",
+   "author": "austen",
+   "title": "Chapter XI",
+   "words": 1606,
+   "deltaSame": 0.8513981487364886,
+   "deltaCross": 0.9346494033522242,
+   "correct": true
+  },
+  {
+   "id": "austen-12",
+   "author": "austen",
+   "title": "Chapter XII",
+   "words": 676,
+   "deltaSame": 1.253486259660228,
+   "deltaCross": 1.4513585702290612,
+   "correct": true
+  },
+  {
+   "id": "austen-13",
+   "author": "austen",
+   "title": "Chapter XIII",
+   "words": 1705,
+   "deltaSame": 0.8110919574990664,
+   "deltaCross": 0.955459766191161,
+   "correct": true
+  },
+  {
+   "id": "austen-14",
+   "author": "austen",
+   "title": "Chapter XIV",
+   "words": 1121,
+   "deltaSame": 0.9583323995602471,
+   "deltaCross": 1.1061547694368787,
+   "correct": true
+  },
+  {
+   "id": "austen-15",
+   "author": "austen",
+   "title": "Chapter XV",
+   "words": 1704,
+   "deltaSame": 0.9382663463724082,
+   "deltaCross": 1.075593007944174,
+   "correct": true
+  },
+  {
+   "id": "austen-16",
+   "author": "austen",
+   "title": "Chapter XVI",
+   "words": 3389,
+   "deltaSame": 0.6513159809950086,
+   "deltaCross": 0.8629896608581974,
+   "correct": true
+  },
+  {
+   "id": "austen-17",
+   "author": "austen",
+   "title": "Chapter XVII",
+   "words": 1280,
+   "deltaSame": 0.8030485635995369,
+   "deltaCross": 1.0432836961383243,
+   "correct": true
+  },
+  {
+   "id": "austen-18",
+   "author": "austen",
+   "title": "Chapter XVIII",
+   "words": 5188,
+   "deltaSame": 0.487208679244836,
+   "deltaCross": 0.8083765429078129,
+   "correct": true
+  },
+  {
+   "id": "austen-19",
+   "author": "austen",
+   "title": "Chapter XIX",
+   "words": 1917,
+   "deltaSame": 0.9896709126700685,
+   "deltaCross": 1.0839114612230327,
+   "correct": true
+  },
+  {
+   "id": "austen-20",
+   "author": "austen",
+   "title": "Chapter XX",
+   "words": 1649,
+   "deltaSame": 0.8662841603863215,
+   "deltaCross": 1.01365492471598,
+   "correct": true
+  },
+  {
+   "id": "austen-21",
+   "author": "austen",
+   "title": "Chapter XXI",
+   "words": 2005,
+   "deltaSame": 0.6689310182539115,
+   "deltaCross": 0.9333140787525205,
+   "correct": true
+  },
+  {
+   "id": "austen-22",
+   "author": "austen",
+   "title": "Chapter XXII",
+   "words": 1735,
+   "deltaSame": 0.6985194062104831,
+   "deltaCross": 0.9833298363673926,
+   "correct": true
+  },
+  {
+   "id": "austen-23",
+   "author": "austen",
+   "title": "Chapter XXIII",
+   "words": 1619,
+   "deltaSame": 0.9399006259148558,
+   "deltaCross": 1.2516514869654558,
+   "correct": true
+  },
+  {
+   "id": "austen-24",
+   "author": "austen",
+   "title": "Chapter XXIV",
+   "words": 1930,
+   "deltaSame": 0.7006833240033605,
+   "deltaCross": 0.9438966047176333,
+   "correct": true
+  },
+  {
+   "id": "austen-25",
+   "author": "austen",
+   "title": "Chapter XXV",
+   "words": 1519,
+   "deltaSame": 0.8237870860549511,
+   "deltaCross": 1.0646956034619535,
+   "correct": true
+  },
+  {
+   "id": "austen-26",
+   "author": "austen",
+   "title": "Chapter XXVI",
+   "words": 2338,
+   "deltaSame": 0.7216793693687623,
+   "deltaCross": 0.9065411944419867,
+   "correct": true
+  },
+  {
+   "id": "austen-27",
+   "author": "austen",
+   "title": "Chapter XXVII",
+   "words": 1266,
+   "deltaSame": 0.9073365138770751,
+   "deltaCross": 1.064642935423426,
+   "correct": true
+  },
+  {
+   "id": "austen-28",
+   "author": "austen",
+   "title": "Chapter XXVIII",
+   "words": 1451,
+   "deltaSame": 1.078468736495178,
+   "deltaCross": 1.0521316301405965,
+   "correct": false
+  },
+  {
+   "id": "austen-29",
+   "author": "austen",
+   "title": "Chapter XXIX",
+   "words": 2391,
+   "deltaSame": 0.711261067877859,
+   "deltaCross": 0.9290376242707491,
+   "correct": true
+  },
+  {
+   "id": "austen-30",
+   "author": "austen",
+   "title": "Chapter XXX",
+   "words": 1232,
+   "deltaSame": 1.1041988417514343,
+   "deltaCross": 1.277708849457359,
+   "correct": true
+  },
+  {
+   "id": "austen-31",
+   "author": "austen",
+   "title": "Chapter XXXI",
+   "words": 1563,
+   "deltaSame": 0.7643507318669932,
+   "deltaCross": 0.9402716009711478,
+   "correct": true
+  },
+  {
+   "id": "austen-32",
+   "author": "austen",
+   "title": "Chapter XXXII",
+   "words": 1500,
+   "deltaSame": 0.7151554750049102,
+   "deltaCross": 0.9366363309929375,
+   "correct": true
+  },
+  {
+   "id": "austen-33",
+   "author": "austen",
+   "title": "Chapter XXXIII",
+   "words": 1866,
+   "deltaSame": 0.7554676610685246,
+   "deltaCross": 0.9479248418849768,
+   "correct": true
+  },
+  {
+   "id": "austen-34",
+   "author": "austen",
+   "title": "Chapter XXXIV",
+   "words": 2104,
+   "deltaSame": 0.7704422102847465,
+   "deltaCross": 0.8996083744010395,
+   "correct": true
+  },
+  {
+   "id": "austen-35",
+   "author": "austen",
+   "title": "Chapter XXXV",
+   "words": 3001,
+   "deltaSame": 0.7026570946187366,
+   "deltaCross": 0.8174031641491329,
+   "correct": true
+  },
+  {
+   "id": "austen-36",
+   "author": "austen",
+   "title": "Chapter XXXVI",
+   "words": 2013,
+   "deltaSame": 0.9258094852995684,
+   "deltaCross": 1.0654436915114565,
+   "correct": true
+  },
+  {
+   "id": "austen-37",
+   "author": "austen",
+   "title": "Chapter XXXVII",
+   "words": 1376,
+   "deltaSame": 0.8665772152195391,
+   "deltaCross": 1.1072975757820525,
+   "correct": true
+  },
+  {
+   "id": "austen-38",
+   "author": "austen",
+   "title": "Chapter XXXVIII",
+   "words": 1038,
+   "deltaSame": 0.8719953328645668,
+   "deltaCross": 1.0366870284882792,
+   "correct": true
+  },
+  {
+   "id": "austen-39",
+   "author": "austen",
+   "title": "Chapter XXXIX",
+   "words": 1640,
+   "deltaSame": 0.9635186327401106,
+   "deltaCross": 0.9546753562126453,
+   "correct": false
+  },
+  {
+   "id": "austen-40",
+   "author": "austen",
+   "title": "Chapter XL",
+   "words": 1680,
+   "deltaSame": 0.9401205256533088,
+   "deltaCross": 1.1945598208711197,
+   "correct": true
+  },
+  {
+   "id": "austen-41",
+   "author": "austen",
+   "title": "Chapter XLI",
+   "words": 2277,
+   "deltaSame": 0.6216658323847407,
+   "deltaCross": 0.8240600768032786,
+   "correct": true
+  },
+  {
+   "id": "austen-42",
+   "author": "austen",
+   "title": "Chapter XLII",
+   "words": 1835,
+   "deltaSame": 0.8686678087960282,
+   "deltaCross": 0.9736262991060032,
+   "correct": true
+  },
+  {
+   "id": "austen-43",
+   "author": "austen",
+   "title": "Chapter XLIII",
+   "words": 4880,
+   "deltaSame": 0.6428280330620495,
+   "deltaCross": 0.794696949638441,
+   "correct": true
+  },
+  {
+   "id": "austen-44",
+   "author": "austen",
+   "title": "Chapter XLIV",
+   "words": 2343,
+   "deltaSame": 0.8292821927163286,
+   "deltaCross": 1.0495194074552245,
+   "correct": true
+  },
+  {
+   "id": "austen-45",
+   "author": "austen",
+   "title": "Chapter XLV",
+   "words": 1734,
+   "deltaSame": 0.8068254105111468,
+   "deltaCross": 1.029680784569893,
+   "correct": true
+  },
+  {
+   "id": "austen-46",
+   "author": "austen",
+   "title": "Chapter XLVI",
+   "words": 3028,
+   "deltaSame": 0.7033599269844176,
+   "deltaCross": 0.8487299114198301,
+   "correct": true
+  },
+  {
+   "id": "austen-47",
+   "author": "austen",
+   "title": "Chapter XLVII",
+   "words": 4098,
+   "deltaSame": 0.5962653023622527,
+   "deltaCross": 0.8388993301392983,
+   "correct": true
+  },
+  {
+   "id": "austen-48",
+   "author": "austen",
+   "title": "Chapter XLVIII",
+   "words": 2257,
+   "deltaSame": 0.7573724726628509,
+   "deltaCross": 0.9551908791727074,
+   "correct": true
+  },
+  {
+   "id": "austen-49",
+   "author": "austen",
+   "title": "Chapter XLIX",
+   "words": 2246,
+   "deltaSame": 0.8617269744983791,
+   "deltaCross": 0.9386524012847065,
+   "correct": true
+  },
+  {
+   "id": "austen-50",
+   "author": "austen",
+   "title": "Chapter L",
+   "words": 2207,
+   "deltaSame": 0.8385104991196627,
+   "deltaCross": 1.0213014281702264,
+   "correct": true
+  },
+  {
+   "id": "austen-51",
+   "author": "austen",
+   "title": "Chapter LI",
+   "words": 2077,
+   "deltaSame": 0.8551095135205293,
+   "deltaCross": 0.939327750771793,
+   "correct": true
+  },
+  {
+   "id": "austen-52",
+   "author": "austen",
+   "title": "Chapter LII",
+   "words": 3034,
+   "deltaSame": 0.6967391441131681,
+   "deltaCross": 0.8746428259358907,
+   "correct": true
+  },
+  {
+   "id": "austen-53",
+   "author": "austen",
+   "title": "Chapter LIII",
+   "words": 2946,
+   "deltaSame": 0.6831912676345412,
+   "deltaCross": 0.9428678202379147,
+   "correct": true
+  },
+  {
+   "id": "austen-54",
+   "author": "austen",
+   "title": "Chapter LIV",
+   "words": 1599,
+   "deltaSame": 0.7441303777362719,
+   "deltaCross": 0.978243725755418,
+   "correct": true
+  },
+  {
+   "id": "austen-55",
+   "author": "austen",
+   "title": "Chapter LV",
+   "words": 2335,
+   "deltaSame": 0.6920917858165327,
+   "deltaCross": 0.8953858372173104,
+   "correct": true
+  },
+  {
+   "id": "austen-56",
+   "author": "austen",
+   "title": "Chapter LVI",
+   "words": 2743,
+   "deltaSame": 0.8592175819834121,
+   "deltaCross": 0.9941862725370538,
+   "correct": true
+  },
+  {
+   "id": "austen-57",
+   "author": "austen",
+   "title": "Chapter LVII",
+   "words": 1657,
+   "deltaSame": 0.7775748220030191,
+   "deltaCross": 0.9411264815235779,
+   "correct": true
+  },
+  {
+   "id": "austen-58",
+   "author": "austen",
+   "title": "Chapter LVIII",
+   "words": 2435,
+   "deltaSame": 0.8203304706014987,
+   "deltaCross": 1.035556246240977,
+   "correct": true
+  },
+  {
+   "id": "austen-59",
+   "author": "austen",
+   "title": "Chapter LIX",
+   "words": 2483,
+   "deltaSame": 0.7560526340231797,
+   "deltaCross": 0.8940098638968607,
+   "correct": true
+  },
+  {
+   "id": "austen-60",
+   "author": "austen",
+   "title": "Chapter LX",
+   "words": 1588,
+   "deltaSame": 0.909750689846428,
+   "deltaCross": 1.0578071604380583,
+   "correct": true
+  },
+  {
+   "id": "austen-61",
+   "author": "austen",
+   "title": "Chapter LXI",
+   "words": 1249,
+   "deltaSame": 0.8626086060587822,
+   "deltaCross": 1.1022045987230775,
+   "correct": true
+  },
+  {
+   "id": "bronte-1",
+   "author": "bronte",
+   "title": "Chapter I",
+   "words": 1952,
+   "deltaSame": 0.7245807011515005,
+   "deltaCross": 1.001409334077562,
+   "correct": true
+  },
+  {
+   "id": "bronte-2",
+   "author": "bronte",
+   "title": "Chapter II",
+   "words": 2769,
+   "deltaSame": 0.6139441258545508,
+   "deltaCross": 0.9036499947137755,
+   "correct": true
+  },
+  {
+   "id": "bronte-3",
+   "author": "bronte",
+   "title": "Chapter III",
+   "words": 3228,
+   "deltaSame": 0.5843620429120662,
+   "deltaCross": 0.8310299316983597,
+   "correct": true
+  },
+  {
+   "id": "bronte-4",
+   "author": "bronte",
+   "title": "Chapter IV",
+   "words": 5864,
+   "deltaSame": 0.48934889552842586,
+   "deltaCross": 0.8030376774784681,
+   "correct": true
+  },
+  {
+   "id": "bronte-5",
+   "author": "bronte",
+   "title": "Chapter V",
+   "words": 5046,
+   "deltaSame": 0.7074586925883715,
+   "deltaCross": 1.0290716504061772,
+   "correct": true
+  },
+  {
+   "id": "bronte-6",
+   "author": "bronte",
+   "title": "Chapter VI",
+   "words": 2921,
+   "deltaSame": 0.6536406832597268,
+   "deltaCross": 0.7922137742766344,
+   "correct": true
+  },
+  {
+   "id": "bronte-7",
+   "author": "bronte",
+   "title": "Chapter VII",
+   "words": 3602,
+   "deltaSame": 0.655171242805546,
+   "deltaCross": 0.827123296326451,
+   "correct": true
+  },
+  {
+   "id": "bronte-8",
+   "author": "bronte",
+   "title": "Chapter VIII",
+   "words": 3013,
+   "deltaSame": 0.6012308199324954,
+   "deltaCross": 0.7787102081329904,
+   "correct": true
+  },
+  {
+   "id": "bronte-9",
+   "author": "bronte",
+   "title": "Chapter IX",
+   "words": 3274,
+   "deltaSame": 0.5590608106303546,
+   "deltaCross": 0.8569904574598733,
+   "correct": true
+  },
+  {
+   "id": "bronte-10",
+   "author": "bronte",
+   "title": "Chapter X",
+   "words": 4403,
+   "deltaSame": 0.510948291748589,
+   "deltaCross": 0.8182884518141853,
+   "correct": true
+  },
+  {
+   "id": "bronte-11",
+   "author": "bronte",
+   "title": "Chapter XI",
+   "words": 6527,
+   "deltaSame": 0.46126205455220526,
+   "deltaCross": 0.825748043732355,
+   "correct": true
+  },
+  {
+   "id": "bronte-12",
+   "author": "bronte",
+   "title": "Chapter XII",
+   "words": 4225,
+   "deltaSame": 0.5287076035394508,
+   "deltaCross": 0.9020383622038508,
+   "correct": true
+  },
+  {
+   "id": "bronte-13",
+   "author": "bronte",
+   "title": "Chapter XIII",
+   "words": 4054,
+   "deltaSame": 0.5083180052799449,
+   "deltaCross": 0.7719167183674691,
+   "correct": true
+  },
+  {
+   "id": "bronte-14",
+   "author": "bronte",
+   "title": "Chapter XIV",
+   "words": 4982,
+   "deltaSame": 0.5976408620841593,
+   "deltaCross": 0.8084342946669029,
+   "correct": true
+  },
+  {
+   "id": "bronte-15",
+   "author": "bronte",
+   "title": "Chapter XV",
+   "words": 5072,
+   "deltaSame": 0.48834631510382775,
+   "deltaCross": 0.8311985182426863,
+   "correct": true
+  },
+  {
+   "id": "bronte-16",
+   "author": "bronte",
+   "title": "Chapter XVI",
+   "words": 3787,
+   "deltaSame": 0.542941322771958,
+   "deltaCross": 0.7490638480871461,
+   "correct": true
+  },
+  {
+   "id": "bronte-17",
+   "author": "bronte",
+   "title": "Chapter XVII",
+   "words": 8187,
+   "deltaSame": 0.40558367584553207,
+   "deltaCross": 0.6485920751590268,
+   "correct": true
+  },
+  {
+   "id": "bronte-18",
+   "author": "bronte",
+   "title": "Chapter XVIII",
+   "words": 5943,
+   "deltaSame": 0.5318409855622676,
+   "deltaCross": 0.7306815346811991,
+   "correct": true
+  },
+  {
+   "id": "bronte-19",
+   "author": "bronte",
+   "title": "Chapter XIX",
+   "words": 3819,
+   "deltaSame": 0.6573918414807783,
+   "deltaCross": 0.9101877674518717,
+   "correct": true
+  },
+  {
+   "id": "bronte-20",
+   "author": "bronte",
+   "title": "Chapter XX",
+   "words": 5880,
+   "deltaSame": 0.5049428470403726,
+   "deltaCross": 0.8926702601438143,
+   "correct": true
+  },
+  {
+   "id": "bronte-21",
+   "author": "bronte",
+   "title": "Chapter XXI",
+   "words": 8887,
+   "deltaSame": 0.37689709056580323,
+   "deltaCross": 0.6922746698893701,
+   "correct": true
+  },
+  {
+   "id": "bronte-22",
+   "author": "bronte",
+   "title": "Chapter XXII",
+   "words": 2923,
+   "deltaSame": 0.5508830709996622,
+   "deltaCross": 0.8374618822552501,
+   "correct": true
+  },
+  {
+   "id": "bronte-23",
+   "author": "bronte",
+   "title": "Chapter XXIII",
+   "words": 4000,
+   "deltaSame": 0.6025518347538613,
+   "deltaCross": 0.942012793808705,
+   "correct": true
+  },
+  {
+   "id": "bronte-24",
+   "author": "bronte",
+   "title": "Chapter XXIV",
+   "words": 7233,
+   "deltaSame": 0.5066639031673416,
+   "deltaCross": 0.7565871081628752,
+   "correct": true
+  },
+  {
+   "id": "bronte-25",
+   "author": "bronte",
+   "title": "Chapter XXV",
+   "words": 5092,
+   "deltaSame": 0.4634646779694597,
+   "deltaCross": 0.8755631543377957,
+   "correct": true
+  },
+  {
+   "id": "bronte-26",
+   "author": "bronte",
+   "title": "Chapter XXVI",
+   "words": 4316,
+   "deltaSame": 0.5349037929914732,
+   "deltaCross": 0.8676083494839725,
+   "correct": true
+  },
+  {
+   "id": "bronte-27",
+   "author": "bronte",
+   "title": "Chapter XXVII",
+   "words": 11285,
+   "deltaSame": 0.403578283677597,
+   "deltaCross": 0.7013361566666212,
+   "correct": true
+  },
+  {
+   "id": "bronte-28",
+   "author": "bronte",
+   "title": "Chapter XXVIII",
+   "words": 6981,
+   "deltaSame": 0.5406333761637243,
+   "deltaCross": 0.882817022003277,
+   "correct": true
+  },
+  {
+   "id": "bronte-29",
+   "author": "bronte",
+   "title": "Chapter XXIX",
+   "words": 4584,
+   "deltaSame": 0.5097534446907733,
+   "deltaCross": 0.729690647130331,
+   "correct": true
+  },
+  {
+   "id": "bronte-30",
+   "author": "bronte",
+   "title": "Chapter XXX",
+   "words": 3768,
+   "deltaSame": 0.5877494696754844,
+   "deltaCross": 0.7866116445543474,
+   "correct": true
+  },
+  {
+   "id": "bronte-31",
+   "author": "bronte",
+   "title": "Chapter XXXI",
+   "words": 3147,
+   "deltaSame": 0.6007149231405362,
+   "deltaCross": 0.8795063156592474,
+   "correct": true
+  },
+  {
+   "id": "bronte-32",
+   "author": "bronte",
+   "title": "Chapter XXXII",
+   "words": 4641,
+   "deltaSame": 0.5287379068370124,
+   "deltaCross": 0.7505053227811099,
+   "correct": true
+  },
+  {
+   "id": "bronte-33",
+   "author": "bronte",
+   "title": "Chapter XXXIII",
+   "words": 4864,
+   "deltaSame": 0.5042988436656383,
+   "deltaCross": 0.7879297868136299,
+   "correct": true
+  },
+  {
+   "id": "bronte-34",
+   "author": "bronte",
+   "title": "Chapter XXXIV",
+   "words": 9370,
+   "deltaSame": 0.4354648906144394,
+   "deltaCross": 0.619100122987328,
+   "correct": true
+  },
+  {
+   "id": "bronte-35",
+   "author": "bronte",
+   "title": "Chapter XXXV",
+   "words": 4379,
+   "deltaSame": 0.5561190777228633,
+   "deltaCross": 0.7411121843957171,
+   "correct": true
+  },
+  {
+   "id": "bronte-36",
+   "author": "bronte",
+   "title": "Chapter XXXVI",
+   "words": 3969,
+   "deltaSame": 0.6359034158720183,
+   "deltaCross": 0.9408063868835274,
+   "correct": true
+  },
+  {
+   "id": "bronte-37",
+   "author": "bronte",
+   "title": "Chapter XXXVII",
+   "words": 7554,
+   "deltaSame": 0.5392370947559374,
+   "deltaCross": 0.8543783073471358,
+   "correct": true
+  },
+  {
+   "id": "bronte-38",
+   "author": "bronte",
+   "title": "Chapter XXXVIII",
+   "words": 1836,
+   "deltaSame": 0.8264159307227762,
+   "deltaCross": 0.9799116112154712,
+   "correct": true
+  }
+ ]
+}
