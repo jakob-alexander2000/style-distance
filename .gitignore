@@ -1,0 +1,16 @@
+node_modules
+dist
+.wrangler
+.dev.vars*
+test-results
+playwright-report
+blob-report
+.pytest_cache
+__pycache__
+*.pyc
+.vite
+tmp
+*.tsbuildinfo
+reference/.cache
+reference/fixtures/brand-drafts.json
+reference/fixtures/brand-held.json
