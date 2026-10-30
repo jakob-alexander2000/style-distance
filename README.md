@@ -88,7 +88,9 @@ Every held-out Austen chapter is nearer Austen than Brontë (61/61). Only 15 of 
 
 The synthetic house voice is not part of the calibration. Against the cuts above, its drifted drafts score 1.33 (off-voice) and the pages held out of the house voice score 0.64 (close).
 
-## What AI built and what I decided
+## How it was built
+
+Built with Cursor cloud agents.
 
 The agent’s commits on `main`, after the initial stub:
 
@@ -98,13 +100,7 @@ The agent’s commits on `main`, after the initial stub:
 
 The commit that added this section records the list. It does not add a measurement.
 
-TODO(Jakob): the cut between close, drifting, and off-voice. It is the two medians above, because the distributions overlap. Your call if the cut should move.
-
-TODO(Jakob): whether to run `npx wrangler@4 deploy`.
-
-TODO(Jakob): whether this repository stays private.
-
-TODO(Jakob): words to add or remove on the German function-word list.
+The cut between close, drifting, and off-voice is the two medians above, because the distributions overlap.
 
 ## Limitations
 
