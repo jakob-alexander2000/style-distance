@@ -144,3 +144,7 @@ PATH="$PWD/.venv/bin:$PATH" npm run verify
 `npm run verify` runs the typecheck, lint, unit tests, the check that Python and TypeScript agree, the production build, the Playwright smoke test, and pytest.
 
 Checked from a fresh clone on 4 November 2026 with Node.js 22 and Python 3.13: `npm ci`, the typecheck, lint, 6 unit tests, 3 agreement checks between Python and TypeScript, the build, 3 Playwright tests, and 17 pytest tests all passed.
+
+## Licence
+
+MIT. See [LICENSE](LICENSE).
