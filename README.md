@@ -2,35 +2,29 @@
 
 Measure, in numbers, how far an AI draft has drifted from a house voice.
 
+It is for writers and editors who use AI drafts and want a number, not a feeling, for whether a draft still sounds like their own writing. Paste a few pages in the house voice and the drafts, and the page shows one distance, a plain reading of it, and the words that move it.
+
 ![Loading the synthetic house voice. The drifted drafts score off-voice, and the held-out pages score close.](docs/style-distance.gif)
 
 ## Try it
 
-No account and no model. The page measures in the browser.
+No account, no key, and no model. The page measures in the browser. You need Node.js 22 or newer. From a fresh clone:
 
 ```bash
+git clone https://github.com/jakob-alexander2000/style-distance.git
+cd style-distance
 npm ci
 npm run dev
 ```
 
-Open the app and either paste texts or load a sample.
+Open the local page and either paste texts or load a sample.
+
+![The brand-voice demo. The drifted drafts score 1.33, off-voice. The pages held out of the house voice score 0.64, close. Below, the words that move the distance and the sentence lengths.](docs/screenshots/brand-voice-1280x800.png)
 
 - **Authorship demo.** Chapters from Jane Austen, *Pride and Prejudice*, and Charlotte Brontë, *Jane Eyre* (Project Gutenberg, public domain; the Gutenberg header and illustration blocks are removed). A held-out Austen chapter is scored against both novelists.
 - **Brand-voice demo.** Synthetic. A made-up house voice, pages held out of that voice, and drafts written to leave it. Marked synthetic in the page and in `public/samples/brand.json`.
 
 English and German. German keeps ä, ö, ü, and ß inside the word and scores the N most frequent words from a German function-word list. The default N is 150.
-
-To ship it as a static Worker, with no server code and no secrets:
-
-```bash
-npm ci
-npm run build
-npx wrangler@4 deploy
-```
-
-`wrangler.jsonc` names the Worker `style-distance`, turns on `workers_dev`, turns off `preview_urls`, sets `compatibility_date` to `2026-10-01`, and serves `./dist` with single-page-application fallback. A `workers.dev` hostname can be opened by anyone who has the URL.
-
-`npm run verify` runs the typecheck, lint, unit tests, the Python/TypeScript parity test, the production build, the Playwright smoke test, and pytest.
 
 ## How it measures
 
@@ -40,7 +34,7 @@ John Burrows, “Delta: a Measure of Stylistic Difference and a Guide to Likely 
 
 For one reference voice and one or more drafts:
 
-1. Tokenise and lowercase. A word is a run of Latin letters, including German ä ö ü ß, with an ASCII apostrophe kept inside the word (`don't`). Casefolding is Unicode lower: ß stays ß, and `SS` is not rewritten to ß.
+1. Tokenise and lowercase. A word is a run of Latin letters, including German ä ö ü ß, with a straight apostrophe (') kept inside the word (`don't`), and a curly one is turned into it. Casefolding is Unicode lower: ß stays ß, and `SS` is not rewritten to ß.
 2. Relative frequency in a text is its count divided by the number of tokens.
 3. Take the N most frequent words in the pooled reference texts, ranked by raw count. Ties break alphabetically. A word that occurs in only one reference text is left out: one text cannot establish a rate for the voice. For German, candidates are limited to `data/function-words-de.txt` before that ranking.
 4. For each remaining word, take the mean and the sample standard deviation across the reference texts (divisor n − 1, the spreadsheet `STDEV`). A text that never uses the word contributes a zero. A word with standard deviation zero is dropped.
@@ -75,7 +69,7 @@ Leave one chapter out of the 61 Austen chapters and 38 Brontë chapters that rem
 | Same author | 0.785 | 0.637 | 0.972 |
 | Other author | 1.272 | 0.750 | 1.528 |
 
-Every held-out Austen chapter is nearer Austen than Brontë (61/61). Only 15 of 38 Brontë chapters are nearer Brontë. Austen’s chapters vary less, so distances measured in Austen’s standard deviations and distances measured in Brontë’s are not the same unit. The labels above use this geometry because it is the geometry of one house voice. They are not used to choose between two voices.
+Every held-out Austen chapter is nearer Austen than Brontë (61 of 61). Only 15 of 38 Brontë chapters are nearer Brontë. Austen’s chapters vary less, so distances measured in Austen’s standard deviations and distances measured in Brontë’s are not the same unit. The labels above use this geometry because it is the geometry of one house voice. They are not used to choose between two voices.
 
 **One shared z-scale** (the authorship demo). Mean and standard deviation come from every training chapter of both novelists. The smaller distance wins.
 
@@ -84,7 +78,7 @@ Every held-out Austen chapter is nearer Austen than Brontë (61/61). Only 15 of 
 | Same author | 0.703 |
 | Other author | 0.933 |
 
-97 of 99 chapters are attributed to their own author: 59/61 Austen, 38/38 Brontë. The two misses are Austen chapters XXVIII (1,451 words; 1.078 vs 1.052) and XXXIX (1,640 words; 0.964 vs 0.955). The margins are small. The demo chapter is Austen, Chapter X (2,219 words): 0.656 to Austen and 0.848 to Brontë.
+97 of 99 chapters are attributed to their own author: 59 of 61 Austen chapters and 38 of 38 Brontë chapters. The two misses are Austen chapters XXVIII (1,451 words; 1.078 vs 1.052) and XXXIX (1,640 words; 0.964 vs 0.955). The margins are small. The demo chapter is Austen, Chapter X (2,219 words): 0.656 to Austen and 0.848 to Brontë.
 
 The synthetic house voice is not part of the calibration. Against the cuts above, its drifted drafts score 1.33 (off-voice) and the pages held out of the house voice score 0.64 (close).
 
@@ -98,8 +92,6 @@ The agent’s commits on `main`, after the initial stub:
 - `e76a08b` — Add the validation corpus and the synthetic house voice.
 - `4f45339` — Add the browser app and the checks around it.
 
-The commit that added this section records the list. It does not add a measurement.
-
 The cut between close, drifting, and off-voice is the two medians above, because the distributions overlap.
 
 ## Limitations
@@ -110,11 +102,11 @@ It also needs enough text. On this chapter set, with the shared z-scale and ever
 
 | Words | Attributed to the right author |
 | --- | ---: |
-| 400 | 88 / 99 |
-| 800 | 92 / 97 |
-| 1,200 | 91 / 92 |
-| 2,000 | 60 / 61 |
-| Full chapter | 97 / 99 |
+| 400 | 88 of 99 |
+| 800 | 92 of 97 |
+| 1,200 | 91 of 92 |
+| 2,000 | 60 of 61 |
+| Full chapter | 97 of 99 |
 
 Below about 800 words the misses start to accumulate. Around 1,000 words is where a chapter in this corpus is usually long enough for the distance to settle. Shorter than that, the number is still a number, and it is noisy.
 
@@ -125,3 +117,30 @@ The cuts are from two nineteenth-century English novelists. A house voice with a
 In a short English sample the 150 most frequent words can include a repeated content word. In a long sample they are mostly function words. German never counts a content word: only the function-word list.
 
 Names in dialogue (`Mr.`, `Mrs.`) are kept from splitting sentences. Other abbreviations will still split, and a line of dialogue can make a sentence look short.
+
+## Deploy
+
+To ship it as a static Worker, with no server code and no secrets:
+
+```bash
+npm ci
+npm run build
+npx wrangler@4 deploy
+```
+
+`wrangler.jsonc` names the Worker `style-distance`, turns on `workers_dev`, turns off `preview_urls`, sets `compatibility_date` to `2026-10-01`, and serves `./dist` with single-page-application fallback. A `workers.dev` hostname can be opened by anyone who has the URL.
+
+## Develop
+
+To run every check, install the Python test dependency and the Playwright browser first:
+
+```bash
+python3 -m venv .venv
+.venv/bin/pip install -r reference/requirements.txt
+npx playwright install chromium
+PATH="$PWD/.venv/bin:$PATH" npm run verify
+```
+
+`npm run verify` runs the typecheck, lint, unit tests, the check that Python and TypeScript agree, the production build, the Playwright smoke test, and pytest.
+
+Checked from a fresh clone on 4 November 2026 with Node.js 22 and Python 3.13: `npm ci`, the typecheck, lint, 6 unit tests, 3 agreement checks between Python and TypeScript, the build, 3 Playwright tests, and 17 pytest tests all passed.
