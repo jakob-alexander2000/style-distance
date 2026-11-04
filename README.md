@@ -2,18 +2,24 @@
 
 Measure, in numbers, how far an AI draft has drifted from a house voice.
 
+It is for writers and editors who use AI drafts and want a number, not a feeling, for whether a draft still sounds like their own writing. Paste a few pages in the house voice and the drafts, and the page shows one distance, a plain reading of it, and the words that move it.
+
 ![Loading the synthetic house voice. The drifted drafts score off-voice, and the held-out pages score close.](docs/style-distance.gif)
 
 ## Try it
 
-No account and no model. The page measures in the browser.
+No account, no key, and no model. The page measures in the browser. You need Node.js 22 or newer. From a fresh clone:
 
 ```bash
+git clone https://github.com/jakob-alexander2000/style-distance.git
+cd style-distance
 npm ci
 npm run dev
 ```
 
-Open the app and either paste texts or load a sample.
+Open the local page and either paste texts or load a sample.
+
+![The brand-voice demo. The drifted drafts score 1.33, off-voice. The pages held out of the house voice score 0.64, close. Below, the words that move the distance and the sentence lengths.](docs/screenshots/brand-voice-1280x800.png)
 
 - **Authorship demo.** Chapters from Jane Austen, *Pride and Prejudice*, and Charlotte Brontë, *Jane Eyre* (Project Gutenberg, public domain; the Gutenberg header and illustration blocks are removed). A held-out Austen chapter is scored against both novelists.
 - **Brand-voice demo.** Synthetic. A made-up house voice, pages held out of that voice, and drafts written to leave it. Marked synthetic in the page and in `public/samples/brand.json`.
@@ -30,7 +36,18 @@ npx wrangler@4 deploy
 
 `wrangler.jsonc` names the Worker `style-distance`, turns on `workers_dev`, turns off `preview_urls`, sets `compatibility_date` to `2026-10-01`, and serves `./dist` with single-page-application fallback. A `workers.dev` hostname can be opened by anyone who has the URL.
 
+To run every check, install the Python test dependency and the Playwright browser first:
+
+```bash
+python3 -m venv .venv
+.venv/bin/pip install -r reference/requirements.txt
+npx playwright install chromium
+PATH="$PWD/.venv/bin:$PATH" npm run verify
+```
+
 `npm run verify` runs the typecheck, lint, unit tests, the Python/TypeScript parity test, the production build, the Playwright smoke test, and pytest.
+
+Checked from a fresh clone on 4 November 2026: `npm ci`, the typecheck, lint, 6 unit tests, 3 parity tests, the build, 3 Playwright tests, and 17 pytest tests all passed. That run used Node.js 20, which npm warns is below the supported version, so use 22 or newer.
 
 ## How it measures
 
