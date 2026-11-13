@@ -28,3 +28,13 @@ test("reduced motion still shows the off-voice reading", async ({ browser }) => 
   await expect(first).toHaveAttribute("data-rank", "0")
   await context.close()
 })
+
+test("each Remove button names the text and column it removes", async ({ page }) => {
+  await page.goto("/")
+  await expect(page.getByRole("button", { name: "Remove Text 1 from Reference" })).toBeVisible()
+  const names = await page.getByRole("button", { name: /^Remove / }).evaluateAll((buttons) =>
+    buttons.map((button) => button.getAttribute("aria-label")),
+  )
+  expect(names.length).toBeGreaterThan(1)
+  expect(new Set(names).size).toBe(names.length)
+})

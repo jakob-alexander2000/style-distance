@@ -34,19 +34,32 @@ export function TextColumn({
         {pieces.map((piece, index) => {
           const expanded = open[piece.id] ?? piece.text.trim() === ""
           const count = piece.text ? wordCount(piece.text) : 0
+          const name = piece.title || `Text ${index + 1}`
+          const bodyId = `piece-body-${piece.id}`
           return (
             <li key={piece.id} className="piece">
               <div className="piece-bar">
-                <button type="button" className="piece-toggle" aria-expanded={expanded} onClick={() => onToggle(piece.id)}>
-                  <span>{piece.title || `Text ${index + 1}`}</span>
+                <button
+                  type="button"
+                  className="piece-toggle"
+                  aria-expanded={expanded}
+                  aria-controls={bodyId}
+                  onClick={() => onToggle(piece.id)}
+                >
+                  <span>{name}</span>
                   <span className="piece-count">{count.toLocaleString("en")} words</span>
                 </button>
-                <button type="button" className="text-button" onClick={() => onRemove(piece.id)}>
+                <button
+                  type="button"
+                  className="text-button"
+                  aria-label={`Remove ${name} from ${title}`}
+                  onClick={() => onRemove(piece.id)}
+                >
                   Remove
                 </button>
               </div>
               {expanded && (
-                <div className="piece-body">
+                <div className="piece-body" id={bodyId}>
                   <label>
                     Title
                     <input
